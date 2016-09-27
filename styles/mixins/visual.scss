@@ -1,0 +1,27 @@
+@import '../variables';
+
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+
+@mixin animation($animation...) {
+  -moz-animation: $animation;
+  -o-animation: $animation;
+  -webkit-animation: $animation;
+  animation: $animation;
+}
+
+@mixin box-shadow($value){
+  box-shadow: $value;
+  -webkit-box-shadow: $value;
+  -moz-box-shadow: $value;
+}

@@ -1,0 +1,45 @@
+// TABLE OF CONTENTS
+// -----------------------------------------------------------------------------
+// 01. Colors
+//    01.01. Particular colors
+//    01.02. Typography and main colors
+//  
+//    01.15. Icon colors
+//    01.20. Chart color
+// -----------------------------------------------------------------------------
+// 01. Colors
+//    01.01. Particular colors
+$c-white: #fff;
+$c-black: #000;
+$c-main: black;
+$c-inverse: white;
+$c-gray: #808080;
+
+//    01.02. Typography and main colors
+$c-bg: #141414;
+$c-public-bg: rgba(0, 0, 0, .9);
+$c-invert-text: $c-white;
+$c-title: $c-invert-text;
+$c-title-underline: #353535;
+$c-default-text: #6e6e6e;
+$c-dark-active: #2c2c2c;
+$c-active: #1a89e6;
+$c-warning: #ff5000;
+$c-error: #ff2400;
+$c-success: #14ce45;
+$c-header-bg: #282828;
+$c-dropzone-text: #cecece;
+
+
+//    01.15. Icon colors
+$c-icon-fill: #7e7e7e;
+$c-icon-fill-active: $c-active;
+$c-100: #c4c4c4;
+$c-icon-delete: #f00;
+$c-icon-grabber-fill: #464646;
+$c-icon-dropzone-fill: #1e1e1e;
+
+
+//    01.20 Chart color
+$c-chart-indicator-active: $c-active;
+$c-chart-indicator-inactive: #373737;

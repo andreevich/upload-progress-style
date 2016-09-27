@@ -1,0 +1,16 @@
+<div class="upload-progress-indicator">
+  <svg class="chart-indicator" width="80" height="80" inner-radius="38" outer-radius="32" center-radius="25"></svg>
+  <div class="indicator-description">
+
+    <div ng-switch="uploadType">
+      <div class="indicator-description-title" ng-switch-when="social">Social Library</div>
+      <div class="indicator-description-title" ng-switch-when="gallery">{{galleryTitle}}</div>
+    </div>
+
+    <div class="indicator-description-info">{{countDone}}/{{countAll}} Uploaded</div>
+    <button class="btn" ng-click="$parent.showDialog(galleryId, uploadType)">{{buttonText}}</button>
+  </div>
+  <svg class="icon icon-svg icon-close" ng-show="showCloseControls" ng-click="$parent.deleteDialog(galleryId, dialogId)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-pixrit-x"></use>
+  </svg>
+</div>

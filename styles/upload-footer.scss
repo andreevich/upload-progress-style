@@ -1,0 +1,171 @@
+@import './themes/dark.scss';
+@import './mixins/layouts';
+@import './mixins/visual';
+
+.upload-progress {
+  @include size(100%, null);
+  @include transition(all $speed-transition ease-in-out);
+
+  background: $c-black;
+  bottom: 0;
+  position: fixed;
+  z-index: 125;
+}
+
+.upload-progress-tab {
+  @include size (190px, 30px);
+
+  background: $c-black;
+  border-radius: 3px 3px 0 0;
+  left: 10px;
+  padding: 0 10px;
+  position: absolute;
+  top: -30px;
+
+  svg {
+    @include size(10px, 10px);
+  }
+
+  .tab-icon,
+  .tab-title,
+  .tab-close {
+    position: absolute;
+  }
+
+  .tab-icon {
+    @include size(20px, 20px);
+    left: 8px;
+    top: 6px;
+  }
+
+  .common-indicator {
+    @include size(20px, 20px);
+  }
+
+  .tab-title {
+    @include font(14, 14);
+    left: 45px;
+    top: 8px;
+  }
+
+  .tab-close {
+    right: 10px;
+    top: 15px;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .tab-title {
+      color: $c-active;
+      @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+        color: $c-default-text;
+      }
+    }
+
+    .tab-close {
+      svg {
+        fill: $c-active;
+        @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+          fill: $c-icon-fill;
+        }
+      }
+    }
+  }
+}
+
+.tab-close {
+  @include transform(rotateX(0deg));
+
+  svg {
+    @include size(14px, 14px);
+    cursor: pointer;
+    fill: $c-default-text;
+    position: absolute;
+    right: -1px;
+    top: -4px;
+  }
+}
+
+.upload-progress-indicators-container {
+  align-items: center;
+  height: 100%;
+  min-height: 117px;
+  padding-left: 22px;
+  padding-top: 20px;
+
+  .btn {
+    @include font(13, 13);
+    border: 2px solid $c-default-text;
+    height: 25px;
+    margin-top: 2px;
+    padding: 0 6px;
+
+    &:hover {
+      border-color: $c-active;
+    }
+  }
+
+  .upload-progress-indicator {
+    @include size(230px, 80px);
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-right: 9px;
+    position: relative;
+  }
+
+  svg {
+    @include size (80px, 80px);
+    float: left;
+    margin-right: 8px;
+  }
+
+  .indicator-description {
+    padding-top: 9px;
+  }
+
+  .indicator-description-title {
+    @include font(14, 15);
+    color: $c-white;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .indicator-description-info {
+    @include font(14, 18);
+    color: $c-active;
+  }
+
+  .icon-close {
+    @include size(10px, 10px);
+    position: absolute;
+    right: 0;
+    top: -10px;
+  }
+}
+
+.hide-upload-bar {
+  @include transform(translateY(100%));
+  .tab-close {
+    @include transform(rotateX(180deg));
+    svg {
+      top: -6px;
+    }
+  }
+}
+
+.chart-indicator-inactive {
+  fill: $c-chart-indicator-inactive;
+}
+
+.chart-indicator-active {
+  fill: $c-chart-indicator-active;
+}
+
+.percent-indicator-label {
+  @include font(16, 16);
+  fill: $c-white;
+  font-weight: bold;
+}

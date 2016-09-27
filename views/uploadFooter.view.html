@@ -1,0 +1,26 @@
+<div class="upload-progress hidden-xs" ng-class="{'hide-upload-bar':hideUploadBar}" ng-hide="arrayOfIndicators.length === 0" ng-cloak>
+  <div class="upload-progress-tab" ng-click="hideUploadBar = !hideUploadBar">
+    <div class="tab-icon">
+      <common-indicator count-data="arrayOfIndicators"></common-indicator>
+    </div>
+    <div class="tab-title">Upload Progress</div>
+    <div class="tab-close">
+      <svg>
+        <use xlink:href="#icon-pixrit-double_arrow"></use>
+      </svg>
+    </div>
+  </div>
+  <div class="upload-progress-indicators-container">
+    <progress-indicator
+        ng-repeat="item in arrayOfIndicators"
+        gallery-title="item.gallery.title"
+        gallery-id="item.galleryId"
+        upload-type="item.uploadType"
+        dialog-id="item.dialogId"
+        count-all="item.totalCount"
+        total-status-percent="item.totalStatusPercent"
+        completed="item.completed"
+        count-done="item.loadedCount">
+    </progress-indicator>
+  </div>
+</div>
